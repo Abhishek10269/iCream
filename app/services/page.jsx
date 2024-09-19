@@ -25,6 +25,13 @@ const services = [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, molestiae nihil non numquam dolor.",
         href: ""
     },
+    {
+        num: "04",
+        title: "Fullstack Development",
+        description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, molestiae nihil non numquam dolor.",
+        href: ""
+    },
 ];
 
 import {motion} from "framer-motion";
@@ -41,17 +48,26 @@ const Services = ()=>{
                     opacity: 1,
                     transition:{delay:2.4,duration: 0.4,ease:"easeIn"},
                 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
                 
                 >
                    { services.map((service,index)=>{
-                    return (<div key={index}>
+                    return (<div key={index} className="flex-1 flex flex-col justify-center gap-6 group">
                         {/* top*/}
-                        <div>
-                            <div>{service.num}</div>
+                        <div className="w-full flex justify-between item-center">
+                            <div className="text-5xl font-extrabold text-outline
+                            text-transparent"
+                            >{service.num}</div>
                             <Link href={service.href}>
                             <BsArrowDownRight/>
                             </Link>
                         </div>
+                        {/* title */}
+                        <h2>{service.title}</h2>
+                        {/* description */}
+                        <p>{service.description}</p>
+                        {/* border */}
+                        <div className="border-b border-white/20 w-full"></div>
                     </div>
                     );
                     })}
