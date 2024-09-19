@@ -1,8 +1,65 @@
+"use client"
+
+import {BsArrowDownRight} from "react-icons/bs"
+import Link from "next/link";
+
+const services = [
+    {
+        num: "01",
+        title: "Web Development",
+        description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, molestiae nihil non numquam dolor.",
+        href: ""
+    },
+    {
+        num: "02",
+        title: "Frontend Development",
+        description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, molestiae nihil non numquam dolor.",
+        href: ""
+    },
+    {
+        num: "03",
+        title: "Backend Development",
+        description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, molestiae nihil non numquam dolor.",
+        href: ""
+    },
+];
+
+import {motion} from "framer-motion";
+
+
+
 const Services = ()=>{
     return(
-        <div>
-         this is Service page
-        </div>
+        <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
+            <div className="container mx-auto">
+                <motion.div 
+                initial={{opacity: 0}}
+                animate={{
+                    opacity: 1,
+                    transition:{delay:2.4,duration: 0.4,ease:"easeIn"},
+                }}
+                
+                >
+                   { services.map((service,index)=>{
+                    return (<div key={index}>
+                        {/* top*/}
+                        <div>
+                            <div>{service.num}</div>
+                            <Link href={service.href}>
+                            <BsArrowDownRight/>
+                            </Link>
+                        </div>
+                    </div>
+                    );
+                    })}
+
+                </motion.div>
+
+            </div>
+        </section>
     )
 }
 
