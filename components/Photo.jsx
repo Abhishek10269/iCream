@@ -43,7 +43,7 @@ const Photo = ()=>{
                 initial={{strokeDasharray:"24 10 0 0"}}
                 animate={{
                     strokeDasharray:["15 120 25 25", "16 25 92 72", "4 250 22 22"],
-                    rotate: [0,360],
+                    rotate: [0,120],
                 }}
                 transition={{
                     duration:20,

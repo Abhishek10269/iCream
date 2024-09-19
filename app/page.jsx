@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import {FiDownload} from "react-icons/fi";
 import Social from "@/components/Socials";
 import Photo from "@/components/Photo";
+import Stats from "@/components/Stats";
 
  const Home =()=> {
   return (
@@ -19,7 +20,7 @@ import Photo from "@/components/Photo";
           </p>
           {/* button and socials */}
           <div className="flex flex-col xl:flex-row items-center gap-8">
-            <Button variant="outline" size="lg" className="flex items-center gap-2">
+            <Button variant="outline" size="lg" className="flex items-center gap-2 hover:text-black">
               <span>Download CV</span>
               <FiDownload className="text-xl"/>
             </Button>
@@ -38,6 +39,7 @@ import Photo from "@/components/Photo";
         </div>
       </div>
     </div>
+    <Stats/>
    </section>
   );
 }
