@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import {BsGithub } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import Link from "next/link";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 const projects = [
     {
@@ -98,7 +99,7 @@ const ProjectCard = ({ project }) => (
     >
         <div className="p-6">
             <div className="flex justify-between items-center mb-4">
-                <span className="text-5xl  font-extrabold text-outline
+                <span className="text-3xl  font-extrabold text-outline
                             text-transparent">{project.num}</span>
             </div>
             <h3 className="text-2xl font-bold mb-3 text-white">{project.title}</h3>
@@ -136,23 +137,28 @@ const ProjectCard = ({ project }) => (
         </Swiper>
 
         <div className="p-6 flex justify-between items-center border-t border-gray-700">
-            <Link
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 text-gray-400 font-semibold px-4 py-2 rounded-full hover:text-white hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-                <BsGithub size={26} />
-            </Link>
-            <Link
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center bg-accent text-black font-semibold px-4 py-2 rounded-full hover:from-green-500 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-                Live Demo
-            </Link>
-        </div>
+        <Link
+    href={project.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center bg-gray-800 text-gray-400 font-semibold px-4 py-2 rounded-full hover:text-white hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+  >
+    <BsGithub size={24} className="mr-2" />
+    View on GitHub
+  </Link>
+  
+  <Link
+    href={project.live}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center bg-gradient-to-r from-green-400 to-green-600 text-black font-semibold px-4 py-2 rounded-full hover:from-green-500 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+  >
+    {/* {<MdOutlineKeyboardDoubleArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />} */}
+    Live Demo
+    <MdOutlineKeyboardDoubleArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+  </Link>
+</div>
+
     </motion.div>
 );
 
@@ -162,10 +168,10 @@ const Work = () => {
         <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="min-h-screen py-0 bg-primary"
+            className="min-h-screen  bg-primary"
         >
             <div className="container mx-auto px-4">
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-8 gap-y-2 md:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} project={project} />
                     ))}
