@@ -168,10 +168,13 @@ const Work = () => {
         <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="min-h-screen  bg-primary"
+            className="min-h-screen bg-primary py-12"
         >
-            <div className="container mx-auto px-4">
-                <div className="grid gap-8 gap-y-2 md:grid-cols-2 lg:grid-cols-3">
+            <div className="container mx-auto px-4 text-center">
+                <h2 className="text-4xl font-bold text-white mb-10 uppercase tracking-wide">
+                "A Showcase of Featured Projects"
+                </h2>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} project={project} />
                     ))}

@@ -4,6 +4,7 @@ import {FiDownload} from "react-icons/fi";
 import Social from "@/components/Socials";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
+import Work from "./work/page";
 
  const Home =()=> {
   return (
@@ -40,6 +41,8 @@ import Stats from "@/components/Stats";
       </div>
     </div>
     <Stats/>
+    <hr className="shadow:md" />
+    <Work></Work>
    </section>
   );
 }
