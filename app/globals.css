@@ -27,4 +27,8 @@
 .text-outline-hover {
   -webkit-text-stroke: 1px #00ff99;
 }
+.always-visible::-webkit-scrollbar {
+  display: block !important; /* Forcing it to display */
+}
+
 }
