@@ -49,42 +49,8 @@ const projects = [
         live: "https://Frontend Project-demo.com",
         github: "https://github.com/username/Frontend Project"
     },
-    {
-        num: "01",
-        title: "Frontend Project",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
-        stack: ["Html 5", "Css 3", "Javascript"],
-        images: ["/assets/1.webp", "/assets/1.webp"], // Add more image paths as needed
-        live: "https://Frontend Project-demo.com",
-        github: "https://github.com/username/Frontend Project"
-    },
-    {
-        num: "01",
-        title: "Frontend Project",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
-        stack: ["Html 5", "Css 3", "Javascript"],
-        images: ["/assets/1.webp", "/assets/1.webp"], // Add more image paths as needed
-        live: "https://Frontend Project-demo.com",
-        github: "https://github.com/username/Frontend Project"
-    },
-    {
-        num: "01",
-        title: "Frontend Project",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
-        stack: ["Html 5", "Css 3", "Javascript"],
-        images: ["/assets/1.webp", "/assets/1.webp"], // Add more image paths as needed
-        live: "https://Frontend Project-demo.com",
-        github: "https://github.com/username/Frontend Project"
-    },
-    {
-        num: "01",
-        title: "Frontend Project",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
-        stack: ["Html 5", "Css 3", "Javascript"],
-        images: ["/assets/1.webp", "/assets/1.webp"], // Add more image paths as needed
-        live: "https://Frontend Project-demo.com",
-        github: "https://github.com/username/Frontend Project"
-    },
+    
+
 
     // Add more projects here...
 ];
@@ -174,7 +140,7 @@ const Work = () => {
                 <h2 className="text-4xl font-bold text-white mb-10 uppercase tracking-wide">
                 "A Showcase of Featured Projects"
                 </h2>
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} project={project} />
                     ))}

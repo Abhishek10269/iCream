@@ -132,6 +132,10 @@ const Resume = () => {
                     className="flex flex-col xl:flex-row gap-[60px]">
                     <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0
                     gap-6">
+                        <h2 className="text-4xl font-bold text-accent mb-10  tracking-wide">
+                Why hire me?
+                </h2>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0"> I bring a unique blend of technical expertise and creativity, ensuring innovative and efficient solutions for your challenges.</p>
                         <TabsTrigger value="experience">Experience</TabsTrigger>
                         <TabsTrigger value="education">Education</TabsTrigger>
                         <TabsTrigger value="skills">Skills</TabsTrigger>

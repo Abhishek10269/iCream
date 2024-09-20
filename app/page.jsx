@@ -5,6 +5,7 @@ import Social from "@/components/Socials";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 import Work from "./work/page";
+import Resume from "./resume/page";
 
  const Home =()=> {
   return (
@@ -41,8 +42,11 @@ import Work from "./work/page";
       </div>
     </div>
     <Stats/>
-    <hr className="shadow:md" />
-    <Work></Work>
+    <hr class="border-t-4 border-accent w-1/2 mx-auto my-8 rounded-lg shadow-lg opacity-80"/>
+    <Resume/>
+    <hr class="border-t-4 border-accent w-1/2 mx-auto my-8 rounded-lg shadow-lg opacity-80"/>
+
+    <Work/>
    </section>
   );
 }
