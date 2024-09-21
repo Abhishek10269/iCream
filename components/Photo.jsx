@@ -36,7 +36,7 @@ const Photo = ()=>{
             viewBox="0 0 506 506"
             xmlns="http://www.w3.org/2000/svg"
             >
-                <motion.circle cx="253" cy="253" r="250" stroke="#00ff99"
+                <motion.circle cx="253" cy="253" r="250" stroke="#a855f7"
                 strokeWidth="4"
                 strokeLinecap="round"
                 strokeLinejoin="round"

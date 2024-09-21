@@ -12,10 +12,11 @@ module.exports = {
 	  extend: {
 		colors: {
 		 primary:"#1c1c22",
-		 accent:{
-			DEFAULT:"#00ff99",
-			hover:"#00e187",
-		 },
+		 accent: {
+			DEFAULT: "#a855f7", // Light purple
+			hover: "#9333ea",   // Darker purple for hover
+		  },
+		  
 		},
 		borderRadius: {
 		  lg: 'var(--radius)',  // Custom border radius values based on CSS variables

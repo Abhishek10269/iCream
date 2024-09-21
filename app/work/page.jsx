@@ -117,7 +117,7 @@ const ProjectCard = ({ project }) => (
     href={project.live}
     target="_blank"
     rel="noopener noreferrer"
-    className="flex items-center bg-gradient-to-r from-green-400 to-green-600 text-black font-semibold px-4 py-2 rounded-full hover:from-green-500 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+    className="flex items-center bg-accent text-black font-semibold px-4 py-2 rounded-full hover:from-green-500 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
   >
     {/* {<MdOutlineKeyboardDoubleArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />} */}
     Live Demo
