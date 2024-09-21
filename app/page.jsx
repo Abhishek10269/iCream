@@ -6,6 +6,7 @@ import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 import Work from "./work/page";
 import Resume from "./resume/page";
+import Contact  from "./contact/page";
 
  const Home =()=> {
   return (
@@ -42,11 +43,13 @@ import Resume from "./resume/page";
       </div>
     </div>
     <Stats/>
-    <hr class="border-t-4 border-accent w-1/2 mx-auto my-8 rounded-lg shadow-lg opacity-80"/>
-    <Resume/>
-    <hr class="border-t-4 border-accent w-1/2 mx-auto my-8 rounded-lg shadow-lg opacity-80"/>
-
+    <hr className="border-t-4 border-accent w-1/2 mx-auto my-8 rounded-lg shadow-lg opacity-80"/>
     <Work/>
+    <hr className="border-t-4 border-accent w-1/2 mx-auto my-8 rounded-lg shadow-lg opacity-80"/>
+
+    <Resume/>
+    <hr className="border-t-4 border-accent w-1/2 mx-auto my-8 rounded-lg shadow-lg opacity-80"/>
+    <Contact/>
    </section>
   );
 }

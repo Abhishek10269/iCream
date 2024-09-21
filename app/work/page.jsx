@@ -39,17 +39,7 @@ const projects = [
         images: ["/assets/2.jpg", "/assets/1.webp"], // Add more image paths as needed
         live: "https://Frontend Project-demo.com",
         github: "https://github.com/username/Frontend Project"
-    },
-    {
-        num: "01",
-        title: "Frontend Project",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
-        stack: ["Html 5", "Css 3", "Javascript"],
-        images: ["/assets/1.webp", "/assets/1.webp"], // Add more image paths as needed
-        live: "https://Frontend Project-demo.com",
-        github: "https://github.com/username/Frontend Project"
-    },
-    
+    }
 
 
     // Add more projects here...
@@ -95,8 +85,7 @@ const ProjectCard = ({ project }) => (
                         alt={`${project.title} - Image ${index + 1}`}
                         width={600}
                         height={350}
-                        objectFit="cover"
-                        className="rounded-lg"
+                        className="rounded-lg object-cover"
                     />
                 </SwiperSlide>
             ))}
