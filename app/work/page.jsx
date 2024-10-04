@@ -3,40 +3,34 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
 import Image from "next/image";
 import Link from "next/link";
-import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowRight, MdOutlineFolderOpen } from "react-icons/md";
 
 const projects = [
     {
         num: "01",
-        title: "Swift Wallet ",
-        description: "Your wallet app for a risk-free, fun financial adventure!",
-        stack: ["Html 5", "Css 3", "Javascript"],
+        title: "Swift Wallet",
+        description: "Your wallet app for a risk-free, fun financial adventure! Experience seamless transactions and intuitive money management.",
+        stack: ["React", "Node.js", "MongoDB"],
         images: ["/assets/wallet1.png", "/assets/wallet2.png"],
         live: "https://Frontend Project-demo.com",
         github: "https://github.com/username/Frontend Project"
     },
     {
         num: "02",
-        title: "Frontend Project",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
-        stack: ["Html 5", "Css 3", "Javascript"],
+        title: "E-Commerce Platform",
+        description: "A modern e-commerce solution with real-time inventory tracking and AI-powered recommendations.",
+        stack: ["Next.js", "Prisma", "PostgreSQL"],
         images: ["/assets/2.jpg", "/assets/3.webp"],
         live: "https://Frontend Project-demo.com",
         github: "https://github.com/username/Frontend Project"
     },
     {
         num: "03",
-        title: "Frontend Project",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
-        stack: ["Html 5", "Css 3", "Javascript"],
+        title: "AI Content Generator",
+        description: "Revolutionize content creation with our AI-powered tool. Generate engaging blog posts, social media content, and more.",
+        stack: ["Python", "TensorFlow", "Flask"],
         images: ["/assets/2.jpg", "/assets/1.webp"],
         live: "https://Frontend Project-demo.com",
         github: "https://github.com/username/Frontend Project"
@@ -45,21 +39,34 @@ const projects = [
 
 const ProjectCard = ({ project }) => (
     <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.5 }}
-        className="mb-10 bg-[#27272c] rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:shadow-2xl flex flex-col items-center"
+        whileHover={{ y: -5, transition: { duration: 0.2 } }}
+        className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300"
     >
-        <div className="p-6 text-center w-full">
-            <span className="text-3xl font-extrabold text-outline text-transparent inline-block mb-4">{project.num}</span>
-            <h3 className="text-2xl font-bold mb-3 text-white">{project.title}</h3>
-            <p className="text-sm text-gray-400 mb-4">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mb-4 justify-center">
+        <div className="relative h-48 sm:h-56">
+            <Image
+                src={project.images[0]}
+                alt={project.title}
+                layout="fill"
+                objectFit="cover"
+                className="transition-all duration-500 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
+        </div>
+
+        <div className="p-6">
+            <div className="flex items-center justify-between mb-4">
+                <span className="text-accent font-mono text-sm">{project.num}</span>
+                <MdOutlineFolderOpen className="text-accent text-xl" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
+            <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.description}</p>
+            <div className="flex flex-wrap gap-2 mb-4">
                 {project.stack.map((tech, index) => (
                     <span
                         key={index}
-                        className="px-3 py-1 bg-gray-700 text-md rounded-full text-accent"
+                        className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full"
                     >
                         {tech}
                     </span>
@@ -67,49 +74,25 @@ const ProjectCard = ({ project }) => (
             </div>
         </div>
 
-        <div className="w-full h-64 relative">
-            <Swiper
-                modules={[Navigation, Pagination, EffectFade, Autoplay]}
-                navigation
-                pagination={{ clickable: true }}
-                effect="fade"
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
-                loop={true}
-                className="w-full h-full"
-            >
-                {project.images.map((image, index) => (
-                    <SwiperSlide key={index}>
-                        <Image
-                            src={image}
-                            alt={`${project.title} - Image ${index + 1}`}
-                            layout="fill"
-                            objectFit="cover"
-                            className="rounded-lg"
-                        />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </div>
-
-        <div className="p-6 flex flex-col sm:flex-row justify-center items-center gap-4 border-t border-gray-700 w-full">
+        <div className="p-6 pt-0 flex justify-between items-center">
             <Link
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center bg-gray-800 text-gray-400 font-semibold px-4 py-2 rounded-full hover:text-white hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="group flex items-center text-gray-400 hover:text-white transition-colors"
             >
-                <BsGithub size={24} className="mr-2" />
-                View on GitHub
+                <BsGithub size={20} className="mr-2 transition-transform group-hover:rotate-12" />
+                <span className="text-sm">Source</span>
             </Link>
             
             <Link
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center bg-accent text-black font-semibold px-4 py-2 rounded-full hover:from-green-500 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="flex items-center text-accent group"
             >
-                Live Demo
-                <MdOutlineKeyboardDoubleArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                <span className="text-sm mr-1">Demo</span>
+                <MdOutlineKeyboardDoubleArrowRight className="transition-transform group-hover:translate-x-1" />
             </Link>
         </div>
     </motion.div>
@@ -120,13 +103,28 @@ const Work = () => {
         <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="min-h-screen bg-primary py-12"
+            className="min-h-screen bg-primary py-20"
         >
-            <div className="container mx-auto px-4 text-center">
-                <h2 className="text-4xl font-bold text-white mb-10 uppercase tracking-wide">
-                "A Showcase of Featured Projects"
-                </h2>
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="container mx-auto px-4">
+                <div className="text-center mb-16">
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-5xl font-bold text-white mb-4"
+                    >
+                        Featured Projects
+                    </motion.h2>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-gray-400 max-w-2xl mx-auto"
+                    >
+                        Discover some of my recent work. Each project is crafted with attention to detail and a passion for creating exceptional user experiences.
+                    </motion.p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} project={project} />
                     ))}
