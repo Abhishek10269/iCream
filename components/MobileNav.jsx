@@ -3,7 +3,7 @@
 import {Sheet,SheetContent,SheetTrigger} from "@/components/ui/sheet"
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import {CiMenuFries} from 'react-icons/ci';
+import { LuMenuSquare } from "react-icons/lu";
 
 const links = [
     {
@@ -11,17 +11,18 @@ const links = [
         path:"/",
     },
     {
-        name:"services",
-        path:"/services",
+        name:"Projects",
+        path:"/work",
+    },
+    {
+        name:"skills",
+        path:"/skills",
     },
     {
         name:"resume",
         path:"/resume",
     },
-    {
-        name:"work",
-        path:"/work",
-    },
+    
     {
         name:"contact",
         path:"/contact",
@@ -33,7 +34,7 @@ const MobileNav = ()=>{
     return(
         <Sheet>
             <SheetTrigger className="flex justify-center items-center">
-                <CiMenuFries className="text-[32px] text-accent"/>
+                <LuMenuSquare className="text-[32px] text-accent"/>
             </SheetTrigger>
             <SheetContent className="flex flex-col">
                 {/* logo */}
