@@ -55,7 +55,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-primary text-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen mt-20 bg-primary text-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="bg-[#27272c] rounded-xl shadow-xl p-8 relative">
@@ -146,7 +146,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center">
                 <Mail className="h-6 w-6 text-accent mr-3" />
-                <span>shakeabhi403@gmail.com@email.com</span>
+                <span>shakeabhi403@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-6 w-6 text-accent mr-3" />

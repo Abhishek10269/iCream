@@ -10,7 +10,7 @@ import Contact  from "./contact/page";
 
  const Home =()=> {
   return (
-   <section className="h-full">
+   <section className="h-full mt-20">
     <div className="container mx-auto h-full">
       <div className="flex flex-col xl:flex-row items-center justify-between xl:pb-24 xl:pt-8">
         {/* text */}

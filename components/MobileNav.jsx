@@ -38,7 +38,7 @@ const MobileNav = ()=>{
             </SheetTrigger>
             <SheetContent className="flex flex-col">
                 {/* logo */}
-                <div className="mt-32 mb-40 text-center text-2xl">logo</div>
+                <div className="mt-32 mb-40 text-center text-2xl">Abhishek</div>
                 {/* nav */}
                 <nav className="flex flex-col justify-center items-center gap-8">
                     {
