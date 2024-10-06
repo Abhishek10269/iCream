@@ -7,6 +7,7 @@ import Stats from "@/components/Stats";
 import Work from "./work/page";
 import Resume from "./resume/page";
 import Contact  from "./contact/page";
+import Skills from "./skills/page";
 
  const Home =()=> {
   return (
@@ -45,6 +46,8 @@ import Contact  from "./contact/page";
     <Stats/>
     <hr className="border-t-4 border-accent w-1/2 mx-auto mt-12 rounded-lg shadow-lg opacity-80"/>
     <Work/>
+    <hr className="border-t-4 border-accent w-1/2 mx-auto mt-2 rounded-lg shadow-lg opacity-80"/>
+    <Skills/>
     <hr className="border-t-4 border-accent w-1/2 mx-auto mt-2 rounded-lg shadow-lg opacity-80"/>
 
     <Resume/>
