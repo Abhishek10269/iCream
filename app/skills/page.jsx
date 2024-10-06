@@ -1,7 +1,7 @@
 "use client"
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from "framer-motion";
 
+import React, { useState, useEffect } from 'react';
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { SiJavascript, SiReact, SiNodeDotJs, SiExpress, SiMongodb, SiPostgresql, SiPython, SiGit, SiDocker, SiAmazonaws, SiTailwindcss, SiTypescript, SiFigma, SiRedux, SiNextdotjs, SiReactNative } from "react-icons/si";
 
 const skillsData = [
@@ -20,12 +20,11 @@ const skillsData = [
     { name: "Figma", shorthand: "Fi", color: "#F24E1E", category: "Design", icon: SiFigma },
     { name: "Redux", shorthand: "Rx", color: "#764ABC", category: "Frontend", icon: SiRedux },
     { name: "Next.js", shorthand: "NJ", color: "#000000", category: "Frontend", icon: SiNextdotjs },
-    { name: "React Native", shorthand: "RN", color: "#61DAFB", category: "Mobile", icon: SiReactNative }
 ];
 
 const SkillCard = ({ skill, isSelected, onClick }) => {
     const controls = useAnimation();
-    const IconComponent = skill.icon;  // Ensure this is correctly mapped to the icon
+    const IconComponent = skill.icon;
 
     useEffect(() => {
         controls.start({
@@ -56,33 +55,11 @@ const SkillCard = ({ skill, isSelected, onClick }) => {
                     className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-4xl transition-transform duration-300 group-hover:scale-110" 
                     style={{ color: skill.color }}
                 >
-                    {IconComponent && <IconComponent />}  {/* Safeguard if IconComponent is undefined */}
+                    {IconComponent && <IconComponent />}
                 </div>
             </div>
             <span className="mt-4 text-sm text-gray-300 font-medium">{skill.name}</span>
             <span className="mt-1 text-xs text-accent/80">{skill.category}</span>
-        </motion.div>
-    );
-};
-
-
-
-const SkillDetails = ({ skill }) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="bg-gray-800/70 backdrop-blur-md rounded-xl p-6 mt-8"
-        >
-            <h3 className="text-2xl font-bold text-white mb-4">{skill.name}</h3>
-            <p className="text-gray-300 mb-4">
-                {skill.name} is a powerful {skill.category.toLowerCase()} technology used in modern web development.
-            </p>
-            <div className="flex items-center space-x-2">
-                <span className="text-accent font-semibold">Category:</span>
-                <span className="bg-accent/20 text-accent px-2 py-1 rounded-full text-sm">{skill.category}</span>
-            </div>
         </motion.div>
     );
 };
@@ -93,7 +70,7 @@ const Skills = () => {
     const [activeFilter, setActiveFilter] = useState('All');
 
     const handleSkillClick = (skill) => {
-        setSelectedSkill(skill);
+        setSelectedSkill(skill === selectedSkill ? null : skill);
     };
 
     const handleFilterClick = (category) => {
@@ -123,40 +100,41 @@ const Skills = () => {
                     Technical Skills
                 </motion.h2>
 
-                <div className="flex justify-center mb-8 space-x-4 overflow-x-auto pb-4">
-                    {uniqueCategories.map((category) => (
-                        <motion.button
-                            key={category}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => handleFilterClick(category)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium
-                                ${activeFilter === category 
-                                    ? 'bg-accent text-primary' 
-                                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}
-                                transition-colors duration-200`}
-                        >
-                            {category}
-                        </motion.button>
-                    ))}
+                <div className="flex justify-center mb-8 overflow-x-auto pb-4">
+                    <div className="flex space-x-2 md:space-x-4 flex-nowrap">
+                        {uniqueCategories.map((category) => (
+                            <motion.button
+                                key={category}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => handleFilterClick(category)}
+                                className={`px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap
+                                    ${activeFilter === category 
+                                        ? 'bg-accent text-primary' 
+                                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}
+                                    transition-colors duration-200`}
+                            >
+                                {category}
+                            </motion.button>
+                        ))}
+                    </div>
                 </div>
 
-                <motion.div 
-                    layout
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
-                >
-                    {filteredSkills.map((skill, index) => (
-                        <SkillCard 
-                            key={skill.name} 
-                            skill={skill} 
-                            index={index} 
-                            isSelected={selectedSkill === skill}
-                            onClick={handleSkillClick}
-                        />
-                    ))}
-                </motion.div>
-
-                {selectedSkill && <SkillDetails skill={selectedSkill} />}
+                <AnimatePresence>
+                    <motion.div 
+                        layout
+                        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6"
+                    >
+                        {filteredSkills.map((skill) => (
+                            <SkillCard 
+                                key={skill.name} 
+                                skill={skill} 
+                                isSelected={selectedSkill === skill}
+                                onClick={handleSkillClick}
+                            />
+                        ))}
+                    </motion.div>
+                </AnimatePresence>
             </div>
         </motion.section>
     );
