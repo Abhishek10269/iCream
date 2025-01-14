@@ -44,14 +44,14 @@ import Skills from "./skills/page";
       </div>
     </div>
     <Stats/>
-    <hr className="border-t-4 border-accent w-1/2 mx-auto mt-12 rounded-lg shadow-lg opacity-80"/>
+    <hr className="border-t-4 border-accent w-1/2 mx-auto mt-8 rounded-lg shadow-lg opacity-80"/>
     <Work/>
-    <hr className="border-t-4 border-accent w-1/2 mx-auto mt-2 rounded-lg shadow-lg opacity-80"/>
+    <hr className="border-t-4 border-accent w-1/2 mx-auto  rounded-lg shadow-lg opacity-80"/>
     <Skills/>
-    <hr className="border-t-4 border-accent w-1/2 mx-auto mt-2 rounded-lg shadow-lg opacity-80"/>
+    <hr className="border-t-4 border-accent w-1/2 mx-auto  rounded-lg shadow-lg opacity-80"/>
 
     <Resume/>
-    <hr className="border-t-4 border-accent w-1/2 mx-auto mt-2 rounded-lg shadow-lg opacity-80"/>
+    <hr className="border-t-4 border-accent w-1/2 mx-auto  rounded-lg shadow-lg opacity-80"/>
     <Contact/>
    </section>
   );

@@ -7,7 +7,7 @@ const about = {
     info: [
         { fieldName: "Name", fieldValue: "Abhishek kumar", icon: User },
         { fieldName: "Phone", fieldValue: "+917678574104", icon: Phone },
-        { fieldName: "Experience", fieldValue: "2+ Year", icon: Calendar },
+        { fieldName: "Experience", fieldValue: "Less than year", icon: Calendar },
         { fieldName: "Nationality", fieldValue: "Indian", icon: Flag },
         { fieldName: "Freelance", fieldValue: "Available", icon: Briefcase },
         { fieldName: "Email", fieldValue: "shakeabhi403@gmail.com", icon: Mail },

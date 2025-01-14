@@ -11,30 +11,10 @@ const experience = {
         " Lorem ipsum dolor sit amet consectetur, adipisicing elit tempora Lorem ipsum dolor sit amet facilis.",
     items: [
         {
-            company: "XYZ",
+            company: "Suvidha Foundation",
             position: "Full Stack Developer",
-            duration: "2024-Present"
-        },
-        {
-            company: "ABC",
-            position: "Freelance Web Developer",
-            duration: "Winter 2023"
-        },
-        {
-            company: "PQR",
-            position: "Full Stack Developer",
-            duration: "Summer 2022"
-        },
-        {
-            company: "XYZ",
-            position: "Full Stack Developer",
-            duration: "2024-Present"
-        },
-        {
-            company: "ABC",
-            position: "Freelance Web Developer",
-            duration: "Winter 2023"
-        },
+            duration: "August-2024"
+        }
     ],
 };
 

@@ -1,58 +1,60 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const Photo = ()=>{
-    return(
-        <div className="w-full h-full relative">
-            <motion.div 
-            initial={{opacity:0}}
-            animate={{
-                opacity: 1,
-                transition: {delay:2,duration:0.4,ease:"easeIn"},
-            }}
-            >
-                {/* image */}
-                <motion.div 
-                initial={{opacity:0}}
+const Photo = () => {
+    return (
+        <div className="w-full h-full relative flex items-center justify-center">
+            {/* Outer animated glow effect */}
+            <motion.div
+                className="absolute w-[320px] h-[320px] xl:w-[520px] xl:h-[520px] rounded-full bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-500 opacity-50 blur-2xl"
                 animate={{
-                    opacity: 1,
-                    transition: {delay:2.4,duration:0.4,ease:"easeInOut"},
-                }}
-                className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
-                >
-                    <Image 
-                    src="/assets/2.jpg" 
-                    priority 
-                    quality={100} 
-                    fill
-                    alt="User Photo" 
-                    className="object-contain"
-                    />
-                </motion.div>
-            {/* circle */}
-            <motion.svg className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px] "
-            fill="transparent"
-            viewBox="0 0 506 506"
-            xmlns="http://www.w3.org/2000/svg"
-            >
-                <motion.circle cx="253" cy="253" r="250" stroke="#a855f7"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                initial={{strokeDasharray:"24 10 0 0"}}
-                animate={{
-                    strokeDasharray:["15 120 25 25", "16 25 92 72", "4 250 22 22"],
-                    rotate: [0,120],
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 360],
                 }}
                 transition={{
-                    duration:20,
+                    duration: 10,
                     repeat: Infinity,
-                    repeatType: "reverse"
+                    ease: "linear",
                 }}
+            ></motion.div>
 
+            {/* Inner rotating gradient ring */}
+            <motion.div
+                className="absolute w-[300px] h-[300px] xl:w-[500px] xl:h-[500px] rounded-full border-4 border-dashed border-gradient-to-r from-blue-400 to-teal-500"
+                animate={{
+                    rotate: [0, 360],
+                }}
+                transition={{
+                    duration: 15,
+                    repeat: Infinity,
+                    ease: "linear",
+                }}
+            ></motion.div>
+
+            {/* Photo with hover effect */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{
+                    opacity: 1,
+                    scale: 1,
+                    transition: { delay: 1, duration: 0.8, ease: "easeOut" },
+                }}
+                whileHover={{
+                    scale: 1.1,
+                    boxShadow: "0px 0px 30px rgba(255, 105, 180, 0.8)",
+                    transition: { duration: 0.4, ease: "easeInOut" },
+                }}
+                className="relative z-10 w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] rounded-full overflow-hidden shadow-2xl"
+            >
+                <Image
+                    src="/assets/abhi.png"
+                    priority
+                    quality={100}
+                    fill
+                    alt="User Photo"
+                    className="object-cover"
                 />
-            </motion.svg>
             </motion.div>
         </div>
     );
